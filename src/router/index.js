@@ -1,16 +1,25 @@
-
+import { createRouter, createWebHistory } from 'vue-router'
  
  
+import Test from '@v/test/index'
 
-export const constantRoutes = [
-  {
-    path: '/' 
-  }]
+import Home from '@v/home/index'
+
+const routerHistory = createWebHistory()
+
  
 
 
-export default new VueRouter({
-    mode: 'history', // 去掉url中的#
-    scrollBehavior: () => ({ y: 0 }),
-    routes: constantRoutes
-  })
+export default createRouter({
+  history: routerHistory,
+  routes: [
+    {
+      path: '/',
+      component: Test
+    },
+    {
+      path: '/home',
+      component: Home
+    }
+  ]
+})

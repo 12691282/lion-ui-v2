@@ -1,18 +1,11 @@
 <template>
-    <div>测试页面</div>
-    <Test />
-  
+  <div id="app">
+    <router-view />
+  </div>
 </template>
 
 <script>
- 
- 
-import Test from '@v/Test/index'
-
-
 export default  {
-  components: { Test },
-  name:  'app',
+  name:  'App'
 }
-
 </script>
