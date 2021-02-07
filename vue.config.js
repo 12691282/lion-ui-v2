@@ -49,7 +49,7 @@ module.exports = {
           extensions: ['.js', '.vue', '.json'],
            // 别名配置
           alias: {
-            '@': path.resolve(__dirname, './src/'),
+            '@': path.resolve(__dirname, './src'),
             '@c': path.resolve(__dirname, './src/components'),
             '@v': path.resolve(__dirname, './src/views')
           } 

@@ -1,13 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
  
  
-import Test from '@v/test/index'
+import Test from '@v/test'
 
-import Home from '@v/home/index'
+import Home from '@v/home'
 
 const routerHistory = createWebHistory()
-
- 
 
 
 export default createRouter({
