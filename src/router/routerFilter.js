@@ -16,12 +16,9 @@ NProgress.configure({
 router.beforeEach((to, from, next) => {
    // 每次切换页面时，调用进度条
    NProgress.start();
-    
-    setTimeout(()=>{
-     
-        next()
   
-
+    setTimeout(()=>{
+        next()
     },1000) 
    
 })  

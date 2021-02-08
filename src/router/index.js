@@ -1,23 +1,38 @@
 import { createRouter, createWebHistory } from 'vue-router'
  
+import Layout from '@/layout'
  
-import Test from '@v/test'
-
-import Home from '@v/home'
 
 const routerHistory = createWebHistory()
 
-
-export default createRouter({
-  history: routerHistory,
-  routes: [
+export const constantRoutes = [
+ 
     {
-      path: '/',
-      component: Test
+        path: '',
+        component: Layout,
+        redirect: 'index',
+        children: [
+          {
+            path: '/index',
+            component: ()=> import(/*webpackChunkName:'test'*/'@v/test'),
+            name: '主页'
+          }
+        ]
     },
     {
-      path: '/home',
-      component: Home
+      path: '',
+      component: Layout,
+      children: [
+        {
+          path: '/home',
+          component: ()=> import('@v/home'),
+          name: '首页'
+        }
+      ]
     }
-  ]
+]
+
+export default new createRouter({
+  history: routerHistory,
+  routes: constantRoutes
 })
