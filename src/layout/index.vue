@@ -1,6 +1,6 @@
 <template>
     <div  :class="dynamicClass" class="wrapperClass" >
-        <div class="navigate">
+        <div >
             导航栏:
             <div  style="width:100px;">
                 <button  @click="goHome()" > go home </button>
