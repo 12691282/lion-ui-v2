@@ -1,25 +1,12 @@
 <template>
-    <div  :class="dynamicClass" class="wrapperClass" >
-        <div >
-            导航栏:
-            <div  style="width:100px;">
-                <button  @click="goHome()" > go home </button>
-                <button  @click="changeClass()" > change  Class </button>
-            </div>    
-        </div>
-   
-        <div class="content">
-            <router-view v-slot="{ Component }">
-                <keep-alive>
-                    <component :is="Component" />
-                </keep-alive>
-            </router-view> 
-        </div>
+    <div  class="wrapperClass" >
+        <navigate class="navigate" />
+        <content class="content" />       
     </div>
 </template>
 
 <script>
-
+import { Navigate, Content } from './components'
 import { mapState } from 'vuex'
 
 export default {
@@ -29,27 +16,16 @@ export default {
             device : "device"
         }     
     },
+    components:{
+        Navigate, Content
+    },
     computed : {
-        key(){
-            this.$route.path
-        },
-        dynamicClass(){
-            return {
-                mobile: this.device === 'mobile'
-             }
-        }
+       
     },
     mounted(){
 
     },
     methods:{
-        changeClass(){
-             if(this.device === 'mobile'){
-                   this.device = 'device';
-             } else if(this.device === 'device'){
-                   this.device = 'mobile';
-             } 
-        },
         goHome(){
           this.$router.replace({path:'/home'})
         }
@@ -62,14 +38,16 @@ export default {
         height: 100%;
         width : 100%
     }
-    .mobile{
-        border: 1px solid black;
-    }
-    .navigate{
-        display: inline-block;
+    .navigate{ 
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 200px;
     }
     .content{
-        display: inline-block;
+       margin-left: 200px;
     }
 
 </style>
