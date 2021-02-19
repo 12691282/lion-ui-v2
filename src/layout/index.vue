@@ -13,7 +13,7 @@ export default {
     name:"main",
     data(){  
         return {
-            device : "device"
+      
         }     
     },
     components:{
@@ -26,9 +26,7 @@ export default {
 
     },
     methods:{
-        goHome(){
-          this.$router.replace({path:'/home'})
-        }
+       
     }
 }
 </script>
@@ -44,10 +42,11 @@ export default {
         left: 0;
         bottom: 0;
         height: 100%;
-        width: 200px;
+        width: 210px;
+        background: #545c64;
     }
     .content{
-       margin-left: 200px;
+       margin-left: 220px;
     }
 
 </style>

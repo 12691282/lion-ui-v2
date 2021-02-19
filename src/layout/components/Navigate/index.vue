@@ -8,35 +8,34 @@
             </transition>
         </div>
         <div>
-            <button class="button_style" @click="goHome()" > {{buttonName}} </button>
-            <button class="button_style" @click="goMain()" > go main page </button>
-            <button class="button_style"  @click="changeClass()" > change  Class </button>
+            <menu-item />
+            
         </div>    
     </div>
 </template>
 <script>
+import MenuItem from './MenuItem'
+
 export default {
     name : "main",
+    components:{
+        MenuItem
+    },
     data(){  
         return {
             title:"lion 系统",
-            buttonName : "go home",
             typeClass : "mobile"
         }     
     },
     methods:{
-        goHome(){
-          this.$router.replace({path:'/home'})
-        },
-        goMain(){
-          this.$router.replace({path:'/'})
-        },
+     
         changeClass(){
             if(this.typeClass === "mobile"){
                 this.typeClass = "device";
             } else if(this.typeClass === "device"){
                 this.typeClass = "mobile";
-            } 
+            }
+            this.$message(this.typeClass)
         }
     },
     computed: {
@@ -52,10 +51,11 @@ export default {
 <style lang="scss" scoped>
 
     .navigate_title{
-        line-height: 50px;
+        line-height: 40px;
         position: relative;
-        height: 50px;
+        height: 40px;
         width: 100%;
+        min-width: 200px;
         text-align: center;
         background: #2b2f3a;
 
@@ -85,6 +85,7 @@ export default {
     .sidebar_container{
         position: relative;
         width: 100%;
+        background: #545c64;
     }
     .test_class{
         border: 1px solid black;
