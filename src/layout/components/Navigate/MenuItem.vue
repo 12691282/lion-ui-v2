@@ -1,14 +1,9 @@
 <template>
     <div >
-       <el-menu default-active="1-4-1" 
-        
-       class="el-menu-vertical-demo"
-        @open="handleOpen" 
-        @close="handleClose" 
-        :collapse="isCollapse"
-        background-color="#545c64"
-        text-color="#fff"
-        active-text-color="#ffd04b" >
+       <el-menu default-active="1-4-1"   class="el-menu-vertical-demo"
+        @open="handleOpen"   @close="handleClose" 
+        :collapse="isCollapse"  background-color="#545c64"
+        text-color="#fff" active-text-color="#ffd04b" >
             <el-submenu index="1">
                 <template #title>
                     <i class="el-icon-location"></i>
@@ -43,22 +38,33 @@
                     <i class="el-icon-setting"></i>
                     <span>导航三</span> 
                 </template>
-                <el-menu-item index="4-1">选项4</el-menu-item>
-                <el-menu-item index="4-2">选项4</el-menu-item>
-                <el-menu-item index="4-3">选项4</el-menu-item>
-                <el-menu-item index="4-4">选项4</el-menu-item>
-                <el-menu-item index="4-5">选项4</el-menu-item>
+ 
+                <item-link v-for="(item, index) in itemsListFour"
+                        :key="index" :to="item.to">
+                     <el-menu-item :index="item.index">{{item.name}}</el-menu-item>
+                </item-link>     
             </el-submenu>
         </el-menu>
     </div>  
 </template>
 <script>
+import ItemLink from './ItemLink'
+
 export default {
     name : "menuItem",
+    components:{
+        ItemLink
+    },
     data(){  
         return {
             buttonName : "go home",
-            isCollapse: false
+            isCollapse: false,
+            itemsListFour : [
+                {"to" : "/home", "index" :"4-1", "name": "选项1"},
+                {"to" : "/index", "index" :"4-2", "name": "选项2"},
+                {"to" : "/home", "index" :"4-3", "name": "选项3"},
+                {"to" : "/index", "index" :"4-4", "name": "选项4"},
+            ]
         }
     },
     methods:{

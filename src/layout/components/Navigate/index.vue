@@ -9,8 +9,7 @@
         </div>
         <div>
             <menu-item />
-            
-        </div>    
+        </div> 
     </div>
 </template>
 <script>
