@@ -14,7 +14,7 @@ export const constantRoutes = [
         children: [
           {
             path: '/index',
-            component: ()=> import(/*webpackChunkName:'test'*/'@v/Test'),
+            component: ()=> import(/*webpackChunkName:'test'*/'@v/test'),
             name: '主页'
           }
         ]

@@ -1,5 +1,5 @@
 <template>
-  <component :is="type" v-bind="linkProps(to)">
+  <component :is="type" v-bind="linkChange(to)" class="link_style">
       <slot /> 
   </component>
 </template>
@@ -13,36 +13,22 @@ props: {
     }
   },
 computed: {
-    // isExternal() {
-    //   return this.to;
-    // },
     type() {
-    //   if (this.isExternal) {
-    //     return 'a'
-    //   }
       return 'router-link'
     }
   },
   methods: {
-
-    linkProps(to) {
-    //   if (this.isExternal) {
-    //     return {
-    //       href: 'index',
-    //       target: '_blank',
-    //       rel: 'noopener'
-    //     }
-    //   }
+    linkChange(to) {
       return {
         to: to
       }
     }
-
   }
-
 }
 
 </script>
-<style scoped>
-  
+<style lang="scss" scoped>
+     .link_style {
+        text-decoration:none;
+    }
 </style>

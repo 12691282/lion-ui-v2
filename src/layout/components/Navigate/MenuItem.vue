@@ -1,6 +1,7 @@
 <template>
-    <div >
-       <el-menu default-active="1-4-1"   class="el-menu-vertical-demo"
+    <el-container :style="height_auto">
+        <el-aside width="200px" class="scroll-wrapper">
+        <el-menu default-active="1-4-1"
         @open="handleOpen"   @close="handleClose" 
         :collapse="isCollapse"  background-color="#545c64"
         text-color="#fff" active-text-color="#ffd04b" >
@@ -45,7 +46,8 @@
                 </item-link>     
             </el-submenu>
         </el-menu>
-    </div>  
+    </el-aside>
+</el-container>    
 </template>
 <script>
 import ItemLink from './ItemLink'
@@ -57,6 +59,7 @@ export default {
     },
     data(){  
         return {
+            fullHeight: "",
             buttonName : "go home",
             isCollapse: false,
             itemsListFour : [
@@ -73,19 +76,32 @@ export default {
         },
         handleClose(key, keyPath) {
             console.log(key, keyPath);
-        },
-        goHome(){
-          this.$router.replace({path:'/home'})
-        },
-        goMain(){
-          this.$router.replace({path:'/'})
         }
     },
+    mounted () {
+
+        this.$nextTick(function () {
+          window.onresize = () => {
+            return (() => {
+              window.fullHeight = document.documentElement.clientHeight- 43
+              this.fullHeight = window.fullHeight  
+            })()
+          }
+       })
+     
+    },
     computed: {
-      
+        height_auto(){
+            window.fullHeight = document.documentElement.clientHeight - 43
+            this.fullHeight = window.fullHeight
+            return `height:${this.fullHeight}px;`
+        }
     }
 };
 </script>
 <style lang="scss" scoped>
-  
+    .scroll-wrapper{
+        overflow-x: hidden;
+        margin-left: 10px;
+    }
 </style>

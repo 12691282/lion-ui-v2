@@ -1,13 +1,12 @@
 <template>
     <div  class="wrapperClass" >
-        <navigate class="navigate" />
-        <content class="content" />       
+        <navigate class="navigate-container" />
+        <content class="content-container" />       
     </div>
 </template>
 
 <script>
 import { Navigate, Content } from './components'
-import { mapState } from 'vuex'
 
 export default {
     name:"main",
@@ -30,23 +29,7 @@ export default {
     }
 }
 </script>
-<style scoped>
-    .wrapperClass{
-        position: relative;
-        height: 100%;
-        width : 100%
-    }
-    .navigate{ 
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        height: 100%;
-        width: 210px;
-        background: #545c64;
-    }
-    .content{
-       margin-left: 220px;
-    }
+<style lang="scss" scoped>
+   
 
 </style>

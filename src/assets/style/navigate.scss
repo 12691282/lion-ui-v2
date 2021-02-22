@@ -1,13 +1,41 @@
 #app {
-//    .navigate-container{
-    //   height: 100%;
-    //   position: fixed;
-    //   font-size: 0px;
-    //   top: 0;
-    //   bottom: 0;
-    //   left: 0;
 
-//    }  
+    .el-scrollbar {
+        height: 100%;
+      }
+      
+    .wrapperClass{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .navigate-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 210px;
+        background: #545c64;
+        z-index: 1001;
+        overflow: hidden;
+
+        .el-submenu {
+            width: 210px;
+            list-style: none;
+            margin: 0;
+            padding-left: 0;
+        }
+
+    }
+    .content-container{
+        position: relative;
+        margin-left: 220px;
+        height: 100%;
+        min-height: 100%;
+    }
+
+    
 
 }
 

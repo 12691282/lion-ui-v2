@@ -6,7 +6,8 @@ import App from '@/App'
 import ElementPlus from 'element-plus';
 import 'element-plus/lib/theme-chalk/index.css';
 
-// import '@/assets/style/global.scss' //全局css
+//全局css
+import '@/assets/style/global.scss'
 
 //直接导入js
 import '@/router/routerFilter'

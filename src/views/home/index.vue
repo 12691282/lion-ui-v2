@@ -1,5 +1,5 @@
 <template>
-    welcome home !
+    home test
     
 </template>
 
@@ -12,3 +12,6 @@ export default  {
 }
 
 </script>
+<style scoped>
+ 
+</style>

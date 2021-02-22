@@ -1,5 +1,5 @@
 <template>
-    <div :class="dynamicClass" class="sidebar_container" >
+    <div :class="dynamicClass" >
         <div class="navigate_title">
             <transition name="sidebarLogoFade">
                 <router-link class="navigate_title_link" to="/">
@@ -72,8 +72,7 @@ export default {
                 color: #fff;
                 font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
                 
-            }
-            
+            }           
         }
     }    
 
@@ -81,12 +80,6 @@ export default {
         margin-top: 10px;
         display: block;
     }
-    .sidebar_container{
-        position: relative;
-        width: 100%;
-        background: #545c64;
-    }
-    .test_class{
-        border: 1px solid black;
-    }
+ 
+    
 </style>
