@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
- 
+import { defineAsyncComponent } from 'vue'
 import Layout from '@/layout'
  
 
@@ -14,7 +14,7 @@ export const constantRoutes = [
         children: [
           {
             path: '/index',
-            component: ()=> import(/*webpackChunkName:'test'*/'@v/test'),
+            component: defineAsyncComponent(() =>import(/*webpackChunkName:'test'*/'@v/test')),
             name: '主页'
           }
         ]
@@ -25,7 +25,7 @@ export const constantRoutes = [
       children: [
         {
           path: '/home',
-          component: ()=> import('@v/home'),
+          component: defineAsyncComponent(() => import('@v/home')),
           name: '首页'
         }
       ]
