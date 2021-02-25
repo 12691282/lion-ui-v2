@@ -8,7 +8,6 @@ const routerHistory = createWebHistory()
 export const constantRoutes = [
  
     {
-        path: '',
         component: Layout,
         redirect: 'index',
         children: [
@@ -20,13 +19,22 @@ export const constantRoutes = [
         ]
     },
     {
-      path: '',
       component: Layout,
       children: [
         {
           path: '/vue4',
           component: defineAsyncComponent(() => import('@v/vue4')),
           name: '首页'
+        }
+      ]
+    },
+    {
+      component: Layout,
+      children: [
+        {
+          path: '/system/role',
+          component: () => import('@v/system/role'),
+          name: '角色'
         }
       ]
     }

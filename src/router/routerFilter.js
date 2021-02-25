@@ -1,5 +1,6 @@
 import NProgress from 'nprogress'
 import router from './index'
+import store from '@/store'
 
 //进度条样式
 import 'nprogress/nprogress.css'
@@ -14,12 +15,18 @@ NProgress.configure({
 
  
 router.beforeEach((to, from, next) => {
-   // 每次切换页面时，调用进度条
-   NProgress.start();
-  
-    setTimeout(()=>{
-        next()
-    },500) 
+ 
+    // 每次切换页面时，调用进度条
+    NProgress.start();
+
+    store.dispatch('permission/GenerateRoutes').then(_param => {
+
+        console.log(_param)
+        setTimeout(()=>{
+            next()
+        },500) 
+
+    })
    
 })  
 

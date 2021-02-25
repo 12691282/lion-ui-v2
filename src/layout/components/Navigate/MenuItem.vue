@@ -1,7 +1,7 @@
 <template>
     <el-container :style="height_auto">
         <el-aside width="220px" class="scroll-wrapper">
-        <el-menu default-active="1-4-1"
+        <el-menu default-active="4-4"
         @open="handleOpen"   @close="handleClose" 
         :collapse="isCollapse"  background-color="#545c64"
         text-color="#fff" active-text-color="#ffd04b" >
@@ -65,7 +65,7 @@ export default {
                 {"to" : "/vue4", "index" :"4-1", "name": "选项1"},
                 {"to" : "/index", "index" :"4-2", "name": "选项2"},
                 {"to" : "/vue4", "index" :"4-3", "name": "选项3"},
-                {"to" : "/index", "index" :"4-4", "name": "选项4"},
+                {"to" : "/system/role", "index" :"4-4", "name": "选项4"},
             ]
         }
     },
