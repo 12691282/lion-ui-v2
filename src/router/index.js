@@ -24,8 +24,8 @@ export const constantRoutes = [
       component: Layout,
       children: [
         {
-          path: '/home',
-          component: defineAsyncComponent(() => import('@v/home')),
+          path: '/vue4',
+          component: defineAsyncComponent(() => import('@v/vue4')),
           name: '首页'
         }
       ]
